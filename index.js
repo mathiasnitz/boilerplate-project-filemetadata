@@ -15,9 +15,6 @@ app.get('/', function (req, res) {
 
 
 app.post("/api/fileanalyse", upload.single('upfile'), (req, res) => {
-  if (!req.file) {
-    return res.json({ error: "Keine Datei hochgeladen" });
-  }
 
   res.json({
     filename: req.file.originalname,
